@@ -10,8 +10,11 @@ const StatusBar = () => {
   );
 
   const updateTime = () => {
-    const hours = new Date().getHours();
-    const minutes = new Date().getMinutes();
+    const _hours = new Date().getHours();
+    const _minutes = new Date().getMinutes();
+
+    const hours = _hours <= 9 ? `0${_hours}` : _hours;
+    const minutes = _minutes <= 9 ? `0${_minutes}` : _minutes;
 
     return `${hours}:${minutes}`;
   };
